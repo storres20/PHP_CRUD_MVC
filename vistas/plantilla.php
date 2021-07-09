@@ -26,17 +26,22 @@
     <div class="container-fluid bg-light">
       <div class="container">
         <div class="nav nav-justified py-2 nav-pills">
+        <!--GET: $_GET["variable"] Variables que se pasan como parametros Via URL ( Tambien conocido como cadena de consulta a traves de la URL). 
+        Cuando es la primera variable, se separa con ? 
+        las que siguen a continuacion , se separan con &
+        -->
+
           <li class="nav-item">
-            <a class="nav-link" href="registro.html">Registro</a>
+            <a class="nav-link" href="index.php?pagina=registro">Registro</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="ingreso.html">Ingreso</a>
+            <a class="nav-link" href="index.php?pagina=ingreso">Ingreso</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Inicio</a>
+            <a class="nav-link active" href="index.php?pagina=inicio">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Salir</a>
+            <a class="nav-link" href="index.php?pagina=salir">Salir</a>
           </li>
         </div>
       </div>
@@ -48,7 +53,23 @@
     ****************************************-->
     <div class="contanier-fluid mt-3">
       <div class="container">
-        <?php include "paginas/inicio.php"; ?>
+        <?php 
+        # ISSET: isset() Determina si una variable esta definida y no es NULL
+
+        if (isset($_GET["pagina"])) {
+          # code...
+          if ($_GET["pagina"] === "registro" || $_GET["pagina"] === "ingreso" || $_GET["pagina"] === "inicio" || $_GET["pagina"] === "salir") {
+            # code...
+            include "paginas/".$_GET["pagina"].".php";
+          }
+
+        }else {
+          # code...
+          include "paginas/registro.php"; 
+        }
+        
+        
+        ?>
       </div>
     </div>
 
