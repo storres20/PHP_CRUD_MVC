@@ -1,4 +1,5 @@
-<form>
+<div class="d-flex justify-content-center text-center">
+<form class="p-5 bg-light border border-primary">
     <div class="form-group mb-3">
         <label for="nombre" class="form-label">Nombre</label>
         <!--Insert ICON Bootstrap - start-->
@@ -37,3 +38,4 @@
 
     <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
+</div>
