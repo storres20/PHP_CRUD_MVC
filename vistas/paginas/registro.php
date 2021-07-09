@@ -1,18 +1,24 @@
-<h1>Registro</h1>
-
 <form>
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <div class="form-group mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+
+        <div class="input-group mb-3">
+
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="bi bi-person-fill" style="font-size: 1rem; color: cornflowerblue;"></i></span>
+        </div>
+            <input type="text" class="form-control" id="nombre">
+        </div>
+        
     </div>
-    <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+    <div class="form-group mb-3">
+        <label for="email" class="form-label">Correo electronico</label>
+        <input type="email" class="form-control" id="email">
     </div>
-    <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <div class="form-group mb-3">
+        <label for="pwd" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="pwd">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
