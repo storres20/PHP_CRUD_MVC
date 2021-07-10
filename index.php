@@ -14,6 +14,11 @@
 require_once "controladores/plantilla.controlador.php";
 require_once "controladores/formularios.controlador.php";
 
+# relacionado a Conexion a la Bases de Datos
+require_once "modelos/conexion.php";
+$conexion = Conexion::conectar();
+echo '<pre>'; print_r($conexion); echo '</pre>';
+
 # para INSTANCIAR una CLASE se usa la palabra NEW
 $plantilla = new ControladorPlantilla();
 
