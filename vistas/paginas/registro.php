@@ -1,5 +1,6 @@
 <div class="d-flex justify-content-center text-center">
-<form class="p-5 bg-light border border-primary">
+
+<form class="p-5 bg-light border border-primary" method="post">
     <div class="form-group mb-3">
         <label for="nombre" class="form-label">Nombre</label>
         <!--Insert ICON Bootstrap - start-->
@@ -7,7 +8,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="bi bi-person-fill" style="font-size: 1rem; color: cornflowerblue;"></i></span>
             </div>
-            <input type="text" class="form-control" id="nombre"> 
+            <input type="text" class="form-control" id="nombre" name="registroNombre"> 
         </div>
         <!--Insert ICON Bootstrap - end-->
     </div>
@@ -19,7 +20,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text"><i class="bi bi-envelope-fill" style="font-size: 1rem; color: cornflowerblue;"></i></span>
         </div>
-            <input type="email" class="form-control" id="email">
+            <input type="email" class="form-control" id="email" name="registroEmail">
         </div>
         <!--Insert ICON Bootstrap - end-->
     </div>
@@ -31,10 +32,17 @@
         <div class="input-group-prepend">
             <span class="input-group-text"><i class="bi bi-lock-fill" style="font-size: 1rem; color: cornflowerblue;"></i></span>
         </div>
-            <input type="password" class="form-control" id="pwd">
+            <input type="password" class="form-control" id="pwd" name="registroPassword">
         </div>
         <!--Insert ICON Bootstrap - end-->
     </div>
+
+    <?php
+    
+    $registro = new ControladorFormularios();
+    $registro -> ctrRegistro();
+    
+    ?>
 
     <button type="submit" class="btn btn-primary">Enviar</button>
 </form>

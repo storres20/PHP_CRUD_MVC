@@ -12,6 +12,7 @@
 #La version require_once() funciona de la misma forma que su respectivo, salvo que, al utilizar la version_once, se impide la carga de un mismo archivo mas de una vez
 
 require_once "controladores/plantilla.controlador.php";
+require_once "controladores/formularios.controlador.php";
 
 # para INSTANCIAR una CLASE se usa la palabra NEW
 $plantilla = new ControladorPlantilla();
