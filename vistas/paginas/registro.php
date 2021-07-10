@@ -39,8 +39,31 @@
 
     <?php
     
-    $registro = new ControladorFormularios();
-    $registro -> ctrRegistro();
+    /* ***************************************
+    FORMA EN QUE SE INSTANCIA LA CLASE DE UN METODO NO ESTATICO
+    *************************************** */
+    
+    /* $registro = new ControladorFormularios();
+    $registro -> ctrRegistro(); */
+    
+    /* ***************************************
+    FORMA EN QUE SE INSTANCIA LA CLASE DE UN METODO ESTATICO
+    *************************************** */
+    $registro = ControladorFormularios::ctrRegistro();
+    
+    if ($registro == "ok") {
+        # code...
+        # vamos a crear script javascript para que limpie cache - start
+        echo '<script>
+            if (window.history.replaceState) {
+                window.history.replaceState(null, null, window.location.href);
+            
+            }
+        </script>';
+        
+        echo '<div class="alert alert-success">El usuario ha sido registrado</div>';
+        # vamos a crear script javascript para que limpie cache - end
+    }
     
     ?>
 
