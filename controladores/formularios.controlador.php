@@ -61,6 +61,30 @@ class ControladorFormularios{
             $valor = $_POST["ingresoEmail"];
         
             $respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+            
+            if ($respuesta["email"] == $_POST["ingresoEmail"] && $respuesta["password"] == $_POST["ingresoPassword"]) {
+                # code...
+                /* echo "Ingreso exitoso"; */
+                
+                echo '<script>
+                if (window.history.replaceState) {
+                    window.history.replaceState(null, null, window.location.href);
+                }
+                window.location = "index.php?pagina=inicio";
+                
+                </script>';
+            }
+            else{
+                # vamos a crear script javascript para que limpie cache - start
+                echo '<script>
+                if (window.history.replaceState) {
+                    window.history.replaceState(null, null, window.location.href);
+                }
+                </script>';
+                
+                echo '<div class="alert alert-danger">El usuario no esta registrado</div>';
+                # vamos a crear script javascript para que limpie cache - end
+            }
         
         }
     

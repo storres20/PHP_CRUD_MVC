@@ -44,6 +44,16 @@ class ModeloFormularios{
         
             return $stmt -> fetchAll(); // fetchAll() significa, devolver todos los registros ... fetch() devuelve UN solo registro
         }
+        else{
+            $stmt = Conexion::conectar() -> prepare("SELECT *,DATE_FORMAT(fecha, '%d/%m/%Y') AS fecha FROM $tabla WHERE $item = :$item ORDER BY id DESC"); //ASC ascendente... DESC descendente
+            
+            $stmt->bindParam(":".$item, $valor, PDO::PARAM_STR);
+            
+            $stmt->execute();
+        
+            return $stmt -> fetch(); // fetchAll() significa, devolver todos los registros ... fetch() devuelve UN solo registro                   
+                    
+        }
         
         $stmt = null;
     }
