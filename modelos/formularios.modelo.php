@@ -35,12 +35,15 @@ class ModeloFormularios{
     /* ***************************************
     SELECCIONAR REGISTROS
     **************************************** */
-    static public function mdlSeleccionarRegistros($tabla){
+    static public function mdlSeleccionarRegistros($tabla, $item, $valor){
     
-        $stmt = Conexion::conectar() -> prepare("SELECT *,DATE_FORMAT(fecha, '%d/%m/%Y') AS fecha FROM $tabla ORDER BY id DESC"); //ASC ascendente... DESC descendente
-        $stmt->execute();
+        if ($item == null && $valor == null) {
+            # code...
+            $stmt = Conexion::conectar() -> prepare("SELECT *,DATE_FORMAT(fecha, '%d/%m/%Y') AS fecha FROM $tabla ORDER BY id DESC"); //ASC ascendente... DESC descendente
+            $stmt->execute();
         
-        return $stmt -> fetchAll(); // fetchAll() significa, devolver todos los registros ... fetch() devuelve UN solo registro
+            return $stmt -> fetchAll(); // fetchAll() significa, devolver todos los registros ... fetch() devuelve UN solo registro
+        }
         
         $stmt = null;
     }

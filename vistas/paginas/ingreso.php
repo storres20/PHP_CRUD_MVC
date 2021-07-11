@@ -1,18 +1,41 @@
-<h1>Ingreso</h1>
+<div class="d-flex justify-content-center text-center">
 
-<form>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+<form class="p-5 bg-light border border-primary" method="post">
+    
+    
+
+    <div class="form-group mb-3">
+        <label for="email" class="form-label">Correo electronico</label>
+        <!--Insert ICON Bootstrap - start-->
+        <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="bi bi-envelope-fill" style="font-size: 1rem; color: cornflowerblue;"></i></span>
+        </div>
+            <input type="email" class="form-control" id="email" name="ingresoEmail">
+        </div>
+        <!--Insert ICON Bootstrap - end-->
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="pwd" class="form-label">Contraseña</label>
+        <!--Insert ICON Bootstrap - start-->
+        <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="bi bi-lock-fill" style="font-size: 1rem; color: cornflowerblue;"></i></span>
+        </div>
+            <input type="password" class="form-control" id="pwd" name="ingresoPassword">
+        </div>
+        <!--Insert ICON Bootstrap - end-->
+    </div>
+
+    <?php
+    
+   
+    $ingreso = new ControladorFormularios(); // NO estatico
+    $ingreso -> ctrIngreso();
+    
+    ?>
+
+    <button type="submit" class="btn btn-primary">Ingresar</button>
+</form>
+</div>

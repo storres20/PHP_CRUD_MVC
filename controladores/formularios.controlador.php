@@ -44,10 +44,28 @@ class ControladorFormularios{
     
         $tabla = "registros";
         
-        $respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla);
+        $respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, null, null);
         
         return $respuesta;
     }
+    
+    /* ***************************************
+    INGRESO
+    **************************************** */
+    public function ctrIngreso(){
+    
+        if (isset($_POST["ingresoEmail"])) {
+        
+            $tabla = "registros";
+            $item = "email";
+            $valor = $_POST["ingresoEmail"];
+        
+            $respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+        
+        }
+    
+    }
+    
 }
 
 
