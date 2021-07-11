@@ -31,6 +31,19 @@ class ModeloFormularios{
         //$stmt -> close(); //para cerrar cualquier conexion que exista en ese momento
         $stmt = null; // vaciamos el objeto
     }
+    
+    /* ***************************************
+    SELECCIONAR REGISTROS
+    **************************************** */
+    static public function mdlSeleccionarRegistros($tabla){
+    
+        $stmt = Conexion::conectar() -> prepare("SELECT * FROM $tabla");
+        $stmt->execute();
+        
+        return $stmt -> fetchAll(); // fetchAll() significa, devolver todos los registros ... fetch() devuelve UN solo registro
+        
+        $stmt = null;
+    }
 }
 
 ?>

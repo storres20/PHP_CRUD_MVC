@@ -35,11 +35,19 @@ class ControladorFormularios{
             # $registro <- $respuesta
             
             # Nota: $respuesta depende mucho de lo que traiga el MODELO ModeloFormularios::mldRegistro($tabla, $datos);
-            
         }
-    
     }
-
+    /* ***************************************
+    SELECCIONAR REGISTROS
+    **************************************** */
+    static public function ctrSeleccionarRegistros(){
+    
+        $tabla = "registros";
+        
+        $respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla);
+        
+        return $respuesta;
+    }
 }
 
 
