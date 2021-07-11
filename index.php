@@ -14,10 +14,9 @@
 require_once "controladores/plantilla.controlador.php";
 require_once "controladores/formularios.controlador.php";
 
-# relacionado a Conexion a la Bases de Datos
-require_once "modelos/conexion.php";
-$conexion = Conexion::conectar();
-echo '<pre>'; print_r($conexion); echo '</pre>';
+require_once "modelos/formularios.modelo.php";
+# en el INDEX.PHP siempre voy a requerir los CONTROLADORES y los MODELOS, a excepcion de CONEXION.PHP, el cual va a ser requerido desde el modelo que vaya a utilizar (En este caso... formularios.modelo.php)
+
 
 # para INSTANCIAR una CLASE se usa la palabra NEW
 $plantilla = new ControladorPlantilla();
