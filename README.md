@@ -1,6 +1,7 @@
 # ⚡CRUD with PHP using MVC ⚡
 
-> This app web let you Log in, register people and more... Allows CRUD with database
+> This app web let you Log in, register people and more... Allows CRUD with database. 
+> Using MVC
 
 ## 🔭skils:
 
