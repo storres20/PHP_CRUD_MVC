@@ -37,7 +37,7 @@ class ModeloFormularios{
     **************************************** */
     static public function mdlSeleccionarRegistros($tabla){
     
-        $stmt = Conexion::conectar() -> prepare("SELECT * FROM $tabla");
+        $stmt = Conexion::conectar() -> prepare("SELECT *,DATE_FORMAT(fecha, '%d/%m/%Y') AS fecha FROM $tabla ORDER BY id DESC"); //ASC ascendente... DESC descendente
         $stmt->execute();
         
         return $stmt -> fetchAll(); // fetchAll() significa, devolver todos los registros ... fetch() devuelve UN solo registro
