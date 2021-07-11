@@ -7,8 +7,8 @@
 | `🔭Frontend` | `⚡Backend` | `📫Database` |
 | ------ | ------ | ------ | 
 | HTML | PHP | Mysql |
-| Javascript |  |  |
-| Boostrap |  |
+| Boostrap |  |  |
+
 
 
 ## 🌱 Beta version
