@@ -29,7 +29,7 @@ $usuarios = ControladorFormularios::ctrSeleccionarRegistros(null, null);
               <th>Nombre</th>
               <th>Email</th>
               <th>Fecha</th>
-              <th class="text-center">Acciones</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -42,7 +42,7 @@ $usuarios = ControladorFormularios::ctrSeleccionarRegistros(null, null);
               <td><?php echo $value["email"]; ?></td>
               <td><?php echo $value["fecha"]; ?></td>
               <td>
-              <div class="btn-group text-center">
+              <div class="btn-group">
                 <div class="px-1">
                 <a href="index.php?pagina=editar&id=<?php echo $value["id"]; ?>" class="btn btn-warning"><i class="bi bi-pencil-fill"></i></a>
                 </div>
