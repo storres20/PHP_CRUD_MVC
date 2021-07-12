@@ -1,3 +1,9 @@
+<?php
+session_start(); // le dice al navegador que se va a trabajar con Variables de sesion
+
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>

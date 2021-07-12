@@ -1,5 +1,20 @@
-<!-- Creamos en las VISTAS un objeto que haga un llamado al CONTROLADOR -->
 <?php
+if (!isset($_SESSION["validarIngreso"])) {
+  # code...
+    echo '<script>window.location = "index.php?pagina=ingreso";</script>';
+    return;
+  
+}
+else {
+  if ($_SESSION["validarIngreso"] != "ok") {
+    # code...
+    echo '<script>window.location = "index.php?pagina=ingreso";</script>';
+    return;
+  }  
+}
+
+
+/* Creamos en las VISTAS un objeto que haga un llamado al CONTROLADOR */
 $usuarios = ControladorFormularios::ctrSeleccionarRegistros();
 /* echo '<pre>'; print_r($usuarios); echo '</pre>'; */
 

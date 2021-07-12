@@ -64,6 +64,9 @@ class ControladorFormularios{
             
             if ($respuesta["email"] == $_POST["ingresoEmail"] && $respuesta["password"] == $_POST["ingresoPassword"]) {
                 # code...
+                
+                $_SESSION["validarIngreso"] = "ok";
+                
                 /* echo "Ingreso exitoso"; */
                 
                 echo '<script>
