@@ -53,8 +53,34 @@ if (isset($_GET["id"])) {
     </div>
 
     <?php
-    $actualizar = new ControladorFormularios();
-    $actualizar -> ctrActualizarRegistro();
+    $actualizar = ControladorFormularios::ctrActualizarRegistro();
+    
+    if ($actualizar == "ok") {
+        # code...
+        
+        # vamos a crear script javascript para que limpie cache - start
+        echo '<script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        
+        }
+        </script>';
+    
+        echo '<div class="alert alert-success">El usuario ha sido actualizado</div>
+        
+        <script>
+            setTimeout(function(){
+                window.location = "index.php?pagina=inicio";
+            
+            },3000);                
+        
+        </script>
+        
+        ';
+        # vamos a crear script javascript para que limpie cache - end
+        
+    }
+    
     ?>
 
     <button type="submit" class="btn btn-primary">Actualizar</button>

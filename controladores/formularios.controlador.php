@@ -96,7 +96,7 @@ class ControladorFormularios{
     /* ***************************************
     ACTUALIZAR REGISTRO
     **************************************** */
-    public function ctrActualizarRegistro(){
+    static public function ctrActualizarRegistro(){
     
         if (isset($_POST["actualizarNombre"])) {
             # code... 
@@ -118,25 +118,40 @@ class ControladorFormularios{
             
             $respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
             
+            return $respuesta;
+            
+        }  
+    }
+    
+    /* ***************************************
+    ELIMINAR REGISTRO
+    **************************************** */   
+    public function ctrEliminarRegistro(){
+    
+        if (isset($_POST["eliminarRegistro"])) {
+            
+            $tabla = "registros";
+            $valor = $_POST["eliminarRegistro"];
+            
+            $respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+            
             if ($respuesta == "ok") {
                 # code...
                 
-                # vamos a crear script javascript para que limpie cache - start
                 echo '<script>
                 if (window.history.replaceState) {
                     window.history.replaceState(null, null, window.location.href);
-                
                 }
-                </script>';
-            
-                echo '<div class="alert alert-success">El usuario ha sido actualizado</div>';
-                # vamos a crear script javascript para que limpie cache - end
+                window.location = "index.php?pagina=inicio";
                 
-            }
-            
-        }  
+                </script>';
+                
+            }       
+        
+        
+        }
+    }  
     
-    }
     
 }
 
