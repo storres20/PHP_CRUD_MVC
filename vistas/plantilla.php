@@ -117,7 +117,7 @@ session_start(); // le dice al navegador que se va a trabajar con Variables de s
 
         if (isset($_GET["pagina"])) {
           # code...
-          if ($_GET["pagina"] === "registro" || $_GET["pagina"] === "ingreso" || $_GET["pagina"] === "inicio" || $_GET["pagina"] === "salir") {
+          if ($_GET["pagina"] === "registro" || $_GET["pagina"] === "ingreso" || $_GET["pagina"] === "inicio" || $_GET["pagina"] === "editar" || $_GET["pagina"] === "salir") {
             # code...
             include "paginas/".$_GET["pagina"].".php";
           }else{

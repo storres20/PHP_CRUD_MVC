@@ -40,11 +40,11 @@ class ControladorFormularios{
     /* ***************************************
     SELECCIONAR REGISTROS
     **************************************** */
-    static public function ctrSeleccionarRegistros(){
+    static public function ctrSeleccionarRegistros($item, $valor){
     
         $tabla = "registros";
         
-        $respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, null, null);
+        $respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
         
         return $respuesta;
     }
@@ -90,6 +90,51 @@ class ControladorFormularios{
             }
         
         }
+    
+    }
+    
+    /* ***************************************
+    ACTUALIZAR REGISTRO
+    **************************************** */
+    public function ctrActualizarRegistro(){
+    
+        if (isset($_POST["actualizarNombre"])) {
+            # code... 
+            
+            if ($_POST["actualizarPassword"] != "") {
+                # code...
+                $password = $_POST["actualizarPassword"];
+            }
+            else {
+                $password = $_POST["passwordActual"];
+            }
+            
+            $tabla = "registros";
+            
+            $datos = array("id" => $_POST["idUsuario"],
+                            "nombre" => $_POST["actualizarNombre"],
+                           "email" => $_POST["actualizarEmail"],
+                           "password" => $password);
+            
+            $respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+            
+            if ($respuesta == "ok") {
+                # code...
+                
+                # vamos a crear script javascript para que limpie cache - start
+                echo '<script>
+                if (window.history.replaceState) {
+                    window.history.replaceState(null, null, window.location.href);
+                
+                }
+                </script>';
+            
+                echo '<div class="alert alert-success">El usuario ha sido actualizado</div>';
+                # vamos a crear script javascript para que limpie cache - end
+                
+            }
+            
+        }  
     
     }
     
