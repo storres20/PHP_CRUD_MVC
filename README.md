@@ -14,6 +14,6 @@
 
 ## 🌱 Beta version
 <ul>
-<li> <a href="#" target="_blank">Coming soon...</a> </li>
+<li> <a href="https://phpcrudmvc.herokuapp.com/" target="_blank">https://phpcrudmvc.herokuapp.com/</a> </li>
 </ul>
 
